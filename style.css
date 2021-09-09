@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&family=Ubuntu&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	--accent: #add8e6;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	background-image: url('/images/background-clock.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+	color: #fff;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 5% 0;
+}
+
+.nav h2 {
+	font-family: 'Sigmar One', cursive;
+	font-size: 2.5rem;
+	text-shadow: 2px 4px 8px var(--accent);
+}
+
+.userInput {
+	text-align: center;
+	width: 350px;
+}
+
+.input {
+	width: 80%;
+	padding: 8px;
+	background-color: #fff;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border: 1.3px solid var(--accent);
+	outline: none;
+}
+
+.input:focus {
+	box-shadow: 0 0 10px var(--accent);
+}
+
+button {
+	width: fit-content;
+	padding: 8px;
+	background-color: var(--accent);
+	font-weight: bold;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border: 1px solid var(--accent);
+	outline: none;
+	cursor: pointer;
+	transition: 1s;
+}
+
+button:hover {
+	background-color: transparent;
+	color: #fff;
+}
+
+.to-do-items {
+	margin: auto;
+	max-width: 90%;
+	font-size: 1.2rem;
+	background-color: rgba(37, 37, 37, 0.603);
+	text-transform: uppercase;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+	transition: all 0.3s ease;
+	animation: fadeout 4s ease;
+}
+
+.item:hover {
+	box-shadow: 0 0 15px var(--accent);
+}
+
+.item i {
+	margin: 8px 20px;
+	cursor: pointer;
+}
+
+.check:active {
+	color: #fff;
+}
+
+.trash:hover {
+	text-shadow: 3px 3px 7px #ff0000;
+	color: #ff0000;
+}
+
+/* .fadeout {
+	opacity: 0;
+	transition: opacity 1s;
+	transform: scale(1.5) ease;
+} */
+
+@media (max-width: 790px) {
+	.nav {
+		flex-direction: column;
+		margin-top: 4rem;
+	}
+	.userInput {
+		margin: 2rem 0 3rem;
+	}
+}
+
+@media (max-width: 440px) {
+	.nav h2 {
+		font-size: 2.2rem;
+	}
+	.item i {
+		margin: 8px;
+	}
+	.userInput {
+		max-width: 100%;
+	}
+	.to-do-items {
+		max-width: 90%;
+		margin: auto;
+		padding: 0;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 350px) {
+	.container {
+		margin: auto;
+		width: 96%;
+	}
+	.nav h2 {
+		font-size: 1.7rem;
+	}
+	.userInput {
+		width: 100%;
+	}
+	.input {
+		width: 70%;
+	}
+	.input,
+	button {
+		padding: 3px;
+	}
+	.item i {
+		margin: 5px;
+	}
+	.to-do-items {
+		font-size: 0.8rem;
+	}
+}
